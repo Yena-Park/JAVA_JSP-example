@@ -21,6 +21,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="/common.jsp" />
 	<p class="head">Manage Customer</p>
 	<ul style="list-style-type:none"> <!--List로 할것이냐,table로 할것이냐  -->
 		<li><input type="radio" id="user1" name="userList"/>Yena Park</li>

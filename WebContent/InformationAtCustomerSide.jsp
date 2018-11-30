@@ -21,6 +21,7 @@
 	</style>
 <title>Insert title here</title><!-- Customer 사이드 -->
 </head>
+	<jsp:include page="/common.jsp" />
 	<div class="head">Information of Yours</div>
 	<div>
 		<h3>Personal Information</h3>

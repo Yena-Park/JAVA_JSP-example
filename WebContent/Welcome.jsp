@@ -22,8 +22,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="/common.jsp" />
 	<br>
-	<div class="head">Welcome, UserName!</div><br><br>
+
 	<input type="radio" id="menShoe" name="shoeType"/>Men <input  type="radio" id="womenShoe" name="shoeType"/>Women <input  type="radio" id="kidShoe" name="shoeType"/>Kid <br>
 	
 	<button class="button">Order</button>

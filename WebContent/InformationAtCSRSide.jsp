@@ -21,6 +21,7 @@
 <title>Insert title here</title><!-- CSR 사이드 -->
 </head>
 <body>
+	<jsp:include page="/common.jsp" />
 	<p class="head"> Customer's Information</p>
 	<div>
 		<h3>Personal Information</h3>

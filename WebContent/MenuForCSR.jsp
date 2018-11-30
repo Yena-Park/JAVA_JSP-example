@@ -24,6 +24,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="/common.jsp" />
 	<br>
 	<div class="head">CSR Page</div><br><br>
 	<p><button class="button">Manage Product</button></p>

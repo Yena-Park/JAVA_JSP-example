@@ -21,6 +21,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="/common.jsp" />
 	<br>
 	<div class="head">Manage Product</div><br><br>
 	<input type="radio" id="shoe1" name="shoe"/><img src="../../image/women/women1.png">
