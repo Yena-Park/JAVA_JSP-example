@@ -2,7 +2,9 @@ package assign3.model;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Customer implements Serializable {
+	private int customerId;
 	private String userName;
 	private String passWord;
 	private String firstName;
@@ -12,9 +14,10 @@ public class Customer implements Serializable {
 	private String postalCode;
 	public boolean valid;
 	
-	public Customer(String userName, String passWord, String firstName, String lastName, String address, String city,
+	public Customer(int customerId, String userName, String passWord, String firstName, String lastName, String address, String city,
 			String postalCode) {
 		super();
+		this.customerId = customerId;
 		this.userName = userName;
 		this.passWord = passWord;
 		this.firstName = firstName;
@@ -27,6 +30,17 @@ public class Customer implements Serializable {
 	public Customer() {
 		super();
 	}
+	
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
 
 	public String getUserName() {
 		return userName;

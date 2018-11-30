@@ -20,6 +20,9 @@
 			border: none;
 			font-size: 25px;
 	    }
+	    .button a {
+	    	color: #ddbe9f;
+	    }
 	</style>
 <title>Insert title here</title>
 </head>
@@ -27,7 +30,7 @@
 	<jsp:include page="/common.jsp" />
 	<br>
 	<div class="head">CSR Page</div><br><br>
-	<p><button class="button">Manage Product</button></p>
-	<p><button class="button">Manage Customer</button></p>
+	<p><button class="button"><a href="ManageProductServlet">Manage Product</a></button></p>
+	<p><button class="button"><a href="ManageCustomerServlet">Manage Customer</a></button></p>
 </body>
 </html>
