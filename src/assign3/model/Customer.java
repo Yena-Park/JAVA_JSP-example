@@ -3,7 +3,6 @@ package assign3.model;
 import java.io.Serializable;
 
 public class Customer implements Serializable {
-	private int customerId;
 	private String userName;
 	private String passWord;
 	private String firstName;
@@ -11,22 +10,23 @@ public class Customer implements Serializable {
 	private String address;
 	private String city;
 	private String postalCode;
-
+	public boolean valid;
 	
+	public Customer(String userName, String passWord, String firstName, String lastName, String address, String city,
+			String postalCode) {
+		super();
+		this.userName = userName;
+		this.passWord = passWord;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.city = city;
+		this.postalCode = postalCode;
+	}
+
 	public Customer() {
 		super();
 	}
-
-
-	public int getCustomerId() {
-		return customerId;
-	}
-
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-
 
 	public String getUserName() {
 		return userName;
@@ -97,5 +97,12 @@ public class Customer implements Serializable {
 		this.postalCode = postalCode;
 	}
 	
-	
+
+	public boolean isValid() {
+		return valid;
+	}
+
+    public void setValid(boolean newValid) {
+    	valid = newValid;
+	}	
 }

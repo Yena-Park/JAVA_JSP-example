@@ -35,7 +35,7 @@
 		<label><span>CSR</span></label>
 		<div class="common_input">
 			<p>User Name: <input type="text" name="userName"/></p>
-			<p>Password: <input type="text" name="passWord"/></p>
+			<p>Password: <input type="password" name="passWord"/></p>
 			<p>First Name: <input type="text" name="firstName"/></p>
 			<p>Last Name: <input type="text" name="lastName"/></p>
 		</div>

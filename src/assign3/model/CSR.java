@@ -3,22 +3,22 @@ package assign3.model;
 import java.io.Serializable;
 
 public class CSR implements Serializable {
-	private int employeeId;
 	private String userName;
 	private String passWord;
 	private String firstName;
 	private String lastName;
+	public boolean valid;
 	
 	public CSR() {
 		super();
 	}
 
-	public int getEmployeeId() {
-		return employeeId;
-	}
-
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
+	public CSR(String userName, String passWord, String firstName, String lastName) {
+		super();
+		this.userName = userName;
+		this.passWord = passWord;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 	public String getUserName() {
@@ -53,5 +53,11 @@ public class CSR implements Serializable {
 		this.lastName = lastName;
 	}
 	
-	
+	public boolean isValid() {
+		return valid;
+	}
+
+    public void setValid(boolean newValid) {
+    	valid = newValid;
+	}	
 }

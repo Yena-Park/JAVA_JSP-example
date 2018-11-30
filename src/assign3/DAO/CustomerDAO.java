@@ -2,7 +2,10 @@ package assign3.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
+import assign3.model.CSR;
+import assign3.model.Customer;
 import assign3.other.DBConnector;
 
 public class CustomerDAO {
@@ -32,4 +35,38 @@ public class CustomerDAO {
 		}
 		return result;
 	}
+	
+	public static Customer login(String userId, String passWord) {
+		Customer customer = new Customer();
+		String query = "SELECT * FROM CUSTOMER WHERE userName = ? AND passWord = ?";    
+		
+		try {
+			con = DBConnector.getConnection();
+			pst = con.prepareStatement(query);
+			pst.setString(1, userId);
+			pst.setString(2, passWord);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next())  {
+				customer = new Customer(
+					rs.getString(2),
+					rs.getString(3),
+					rs.getString(4),
+					rs.getString(5),
+					rs.getString(6),
+					rs.getString(7),
+					rs.getString(8)
+				);
+				customer.setValid(true);
+			} else {
+				customer.setValid(false);
+			}
+			pst.close();
+			con.close();
+		} catch (Exception ex) {
+			System.out.println("Log In failed: An Exception has occurred! " + ex);
+		} 
+		
+		return customer;
+	}
+	
 }

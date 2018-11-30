@@ -38,7 +38,6 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		doGet(request, response);
 	
 		if(request.getParameter("userType").equals("Customer")) {
 			String userName = 
@@ -62,7 +61,7 @@ public class RegisterServlet extends HttpServlet {
 			
 
 			if (result > 0) {
-				request.getRequestDispatcher("/HomePage.jsp").forward(request, response);
+				response.sendRedirect("HomePage.jsp");
 			} else {
 				//TODO: error message
 			}
@@ -81,7 +80,7 @@ public class RegisterServlet extends HttpServlet {
 			System.out.println(result);
 			
 			if (result > 0) {
-				request.getRequestDispatcher("/HomePage.jsp").forward(request, response);
+				response.sendRedirect("HomePage.jsp");
 			} else {
 				//TODO: error message
 			}
