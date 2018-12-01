@@ -15,6 +15,16 @@ public class Order implements Serializable {
 		super();
 	}
 
+	public Order(int orderId, int customerId, int itemId, Date orderDate, int quantity, String status) {
+		super();
+		this.orderId = orderId;
+		this.customerId = customerId;
+		this.itemId = itemId;
+		this.orderDate = orderDate;
+		this.quantity = quantity;
+		this.status = status;
+	}
+
 	public int getOrderId() {
 		return orderId;
 	}
