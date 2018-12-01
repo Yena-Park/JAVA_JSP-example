@@ -15,7 +15,7 @@ public class OrderDAO {
 	
 	//add customer row
 	public static List<Order> getOrdersByCustomerId(int customerId) {
-		String query = "Select * from order where customerId = ?";
+		String query = "select * from orders where customerId = ?";
 		
 		List<Order> orders = new ArrayList<Order>();
 		try {

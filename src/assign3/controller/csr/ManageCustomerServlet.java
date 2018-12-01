@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import assign3.DAO.CustomerDAO;
+import assign3.DAO.OrderDAO;
 import assign3.model.Customer;
+import assign3.model.Order;
 
 /**
  * Servlet implementation class ManageCustomerServlet
@@ -65,6 +67,10 @@ public class ManageCustomerServlet extends HttpServlet {
 				doGet(request, response);
 			}
 		} else if ("Manage Order".equals(request.getParameter("button"))) {
+			List<Order> orders = OrderDAO.getOrdersByCustomerId(customerId);
+			Customer customer = CustomerDAO.getCustomerById(customerId);
+			request.setAttribute("orders", orders);
+			request.setAttribute("customer", customer);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRViewOrders.jsp");
 			dispatcher.forward(request, response);
 		}
