@@ -14,7 +14,7 @@
 			font-weight: 900;
 		}
 		.button {
-			width: 250px; height: 35px;
+			width: 600px; height: 35px;
 			background-color: #1c3f61;
 			color: #ddbe9f;
 			border: none;

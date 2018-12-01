@@ -1,11 +1,17 @@
 package assign3.controller.csr;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import assign3.DAO.ShoeDAO;
+import assign3.model.Shoe;
 
 /**
  * Servlet implementation class ManageProductServlet
@@ -27,8 +33,10 @@ public class ManageProductServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("!!");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		List<Shoe> shoes = ShoeDAO.getAll();
+		request.setAttribute("shoes", shoes);
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRManagingProduct.jsp");
+		dispatcher.forward(request,response);
 	}
 
 	/**

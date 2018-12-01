@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +23,32 @@
 </head>
 <body>
 	<jsp:include page="/common.jsp" />
-	<br>
-	<div class="head">Manage Product</div><br><br>
-	<input type="radio" id="shoe1" name="shoe"/><img src="../../image/women/women1.png">
-	<input type="radio" id="shoe1" name="shoe"/>
+	<p class="head">Manage Product</p>
+	<form method="post" action="ManageProductServlet">
+		<table>
+			<tr>
+				<th></th>
+				<th>Shoe Id</th>
+				<th>Product Name</th>
+				<th>Category</th>
+				<th>shoeSize</th>
+				<th>price</th>
+			</tr>
+			<c:forEach items="${shoes}" var="shoe">
+				<tr>
+					<td><input type="radio" name="customerId" value="${customer.customerId}"/></td>
+					<td>${shoe.itemId}</td>
+					<td>${shoe.itemName}</td>
+					<td>${shoe.category}</td>
+					<td>${shoe.shoeSize}</td>
+					<td>${shoe.price}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	
+		<input type="submit" name="button" value="View" class="button"/>
+		<input type="submit" name="button" value="Edit" class="button"/>
+		<input type="submit" name="button" value="Delete" class="button"/>
+	</form>
 </body>
 </html>
