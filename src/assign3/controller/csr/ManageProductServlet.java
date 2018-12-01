@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import assign3.DAO.CustomerDAO;
 import assign3.DAO.ShoeDAO;
-import assign3.model.Customer;
 import assign3.model.Shoe;
 
 /**
@@ -46,9 +45,10 @@ public class ManageProductServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int itemId = Integer.parseInt(request.getParameter("itemId"));
+		int itemId = -1;
 		
 		if("View".equals(request.getParameter("button"))) {
+			itemId = Integer.parseInt(request.getParameter("itemId"));
 			//request.getParameter
 //			Customer customer = CustomerDAO.getCustomerById(customerId);
 //			
@@ -57,13 +57,15 @@ public class ManageProductServlet extends HttpServlet {
 //			dispatcher.forward(request, response);
 		} else if ("Add".equals(request.getParameter("button"))) {
 			//
-			
+			System.out.println(itemId);
 		} else if ("Edit".equals(request.getParameter("button"))) {
-//			Customer customer = CustomerDAO.getCustomerById(customerId);
-//			request.setAttribute("customer", customer);
-//			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSREditCustomerForm.jsp");
-//			dispatcher.forward(request, response);
+			itemId = Integer.parseInt(request.getParameter("itemId"));
+			Shoe shoe = ShoeDAO.getShoeById(itemId);
+			request.setAttribute("shoe", shoe);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSREditProductForm.jsp");
+			dispatcher.forward(request, response);
 		} else if ("Delete".equals(request.getParameter("button"))) {
+			itemId = Integer.parseInt(request.getParameter("itemId"));
 			int result = CustomerDAO.deleteCustomer(itemId);
 			
 			if( itemId == result ) {

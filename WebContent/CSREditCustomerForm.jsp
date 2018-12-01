@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="assign3.model.Customer" %>  
 <!DOCTYPE html>  
 <html>  
 <head>  
@@ -8,12 +10,11 @@
 </head>  
 <body>  
 
-<%@ page import="assign3.model.Customer" %>  
-<jsp:include page="/common.jsp" />
+	<jsp:include page="/common.jsp" />
   
-<%  
-	Customer customer = (Customer) request.getAttribute("customer");  
-%>  
+	<%  
+		Customer customer = (Customer) request.getAttribute("customer");  
+	%>  
 
 	<h1>Edit Customer</h1>  
 	<form action="EditCustomerServlet" method="post">  

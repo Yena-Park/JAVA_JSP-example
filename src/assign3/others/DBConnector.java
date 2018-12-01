@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class DBConnector {
 
-	private static final String url="jdbc:mysql://localhost:3306/MVCDB";
+	private static final String url="jdbc:mysql://localhost:3306/MVCDB?autoReconnect=true&useSSL=false";
 //	private static final String DriverClass = "com.mysql.jdbc.Driver";
 	private static final String user= "root";
 	private static final String password= "rootroot";
