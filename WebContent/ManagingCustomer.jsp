@@ -24,20 +24,29 @@
 <body>
 	<jsp:include page="/common.jsp" />
 	<p class="head">Manage Customer</p>
-	<table>
-	  <c:forEach items="${customers}" var="customer">
-	   <tr>
-	     <td>${customer.customerId}</td><!-- TODO: 개인정보 추가 -->
-	   </tr>
-	  </c:forEach>
-	</table>
-
-	<ul style="list-style-type:none"> <!--List로 할것이냐,table로 할것이냐  -->
-		<li><input type="radio" id="user1" name="userList"/>Yena Park</li>
-		<li><input type="radio" id="user2" name="userList"/>Ted Kim</li>
-		<li></li>
-	</ul>
-	<button class="button">Edit</button>
-	<button class="button">Delete</button>
+	<form method="post" action="ManageCustomerServlet">
+		<table>
+			<tr>
+				<th></th>
+				<th>Customer Id</th>
+				<th>User Name</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+			<c:forEach items="${customers}" var="customer">
+				<tr>
+					<td><input type="radio" name="customerId" value="${customer.customerId}"/></td>
+					<td>${customer.customerId}</td>
+					<td>${customer.userName}</td>
+					<td>${customer.firstName}</td>
+					<td>${customer.lastName}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	
+		<input type="submit" name="button" value="View" class="button"/>
+		<input type="submit" name="button" value="Edit" class="button"/>
+		<input type="submit" name="button" value="Delete" class="button"/>
+	</form>
 </body>
 </html>

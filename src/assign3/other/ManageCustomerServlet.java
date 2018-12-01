@@ -43,9 +43,14 @@ public class ManageCustomerServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		System.out.println("@@@@");
-		doGet(request, response);
+		if("View".equals(request.getParameter("button"))) {
+			//request.getParameter
+		} else if ("Edit".equals(request.getParameter("button"))) {
+			
+		} else if ("Delete".equals(request.getParameter("button"))) {
+			
+		}
+		
 	}
 
 }
