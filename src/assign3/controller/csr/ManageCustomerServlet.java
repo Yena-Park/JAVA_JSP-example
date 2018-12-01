@@ -68,7 +68,6 @@ public class ManageCustomerServlet extends HttpServlet {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRViewOrders.jsp");
 			dispatcher.forward(request, response);
 		}
-		
 	}
 
 }
