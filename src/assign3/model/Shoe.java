@@ -7,7 +7,7 @@ public class Shoe implements Serializable {
 	private int itemId;
 	private String itemName;
 	private String category;
-	private String shoeSize;
+	private int shoeSize;
 	private int price;
 
 	public boolean isNew;
@@ -16,14 +16,13 @@ public class Shoe implements Serializable {
 		super();
 		this.itemName = "";
 		this.category = "";
-		this.shoeSize = "";
 	}
 
 	public int getItemId() {
 		return itemId;
 	}
 
-	public Shoe(int itemId, String itemName, String category, String shoeSize, int price) {
+	public Shoe(int itemId, String itemName, String category, int shoeSize, int price) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
@@ -52,11 +51,11 @@ public class Shoe implements Serializable {
 		this.category = category;
 	}
 
-	public String getShoeSize() {
+	public int getShoeSize() {
 		return shoeSize;
 	}
 
-	public void setShoeSize(String shoeSize) {
+	public void setShoeSize(int shoeSize) {
 		this.shoeSize = shoeSize;
 	}
 

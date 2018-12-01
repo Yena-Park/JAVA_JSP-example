@@ -29,7 +29,7 @@ public class ShoeDAO {
 					rs.getInt(1),
 					rs.getString(2),
 					rs.getString(3),
-					rs.getString(4),
+					rs.getInt(4),
 					rs.getInt(5)
 				);
 				shoes.add(shoe);
@@ -43,7 +43,7 @@ public class ShoeDAO {
 	}
 	
 	public static int insertShoe(String itemName, String category,
-			String shoeSize, int price) {
+			int shoeSize, int price) {
 		String query = "INSERT INTO shoe (itemName, category, shoeSize, price)"
 				+ " VALUES (?, ?, ?, ?)";
 		
@@ -53,7 +53,7 @@ public class ShoeDAO {
 			pst = con.prepareStatement(query);
 			pst.setString(1, itemName);
 			pst.setString(2, category);
-			pst.setString(3, shoeSize);
+			pst.setInt(3, shoeSize);
 			pst.setInt(4, price);
 			result = pst.executeUpdate();
 			pst.close();
@@ -78,7 +78,7 @@ public class ShoeDAO {
 					rs.getInt(1),
 					rs.getString(2),
 					rs.getString(3),
-					rs.getString(4),
+					rs.getInt(4),
 					rs.getInt(5)
 				);
 			}
@@ -94,7 +94,7 @@ public class ShoeDAO {
 	
 	public static int updateShoeById(int itemId,
 			String itemName, String category,
-			String shoeSize, int price) {
+			int shoeSize, int price) {
 		String query = "update shoe set itemName = ? ,"
 				+ " category =?, "
 				+ " shoeSize = ?,"
@@ -106,7 +106,7 @@ public class ShoeDAO {
 			
 			pst.setString(1, itemName);
 			pst.setString(2, category);
-			pst.setString(3, shoeSize);
+			pst.setInt(3, shoeSize);
 			pst.setInt(4, price);
 			pst.setInt(5, itemId);
 			pst.executeUpdate();

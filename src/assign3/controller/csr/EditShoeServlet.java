@@ -45,8 +45,8 @@ public class EditShoeServlet extends HttpServlet {
 				request.getParameter("itemName");
 		String category = 
 				request.getParameter("category");
-		String shoeSize = 
-				request.getParameter("shoeSize");
+		int shoeSize = 
+				Integer.parseInt(request.getParameter("shoeSize"));
 		int price = 
 				Integer.parseInt(request.getParameter("price"));
 		int itemId = 

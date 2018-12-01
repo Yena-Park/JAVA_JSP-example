@@ -69,8 +69,7 @@ public class ManageProductServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		} else if ("Delete".equals(request.getParameter("button"))) {
 			itemId = Integer.parseInt(request.getParameter("itemId"));
-			int result = CustomerDAO.deleteCustomer(itemId);
-			
+			int result = ShoeDAO.deleteById(itemId);
 			if( itemId == result ) {
 				// reload
 				doGet(request, response);
