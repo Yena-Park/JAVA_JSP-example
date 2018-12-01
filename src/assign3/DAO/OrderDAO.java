@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import assign3.model.Customer;
 import assign3.model.Order;
 import assign3.other.DBConnector;
 

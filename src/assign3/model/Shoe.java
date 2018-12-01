@@ -17,6 +17,15 @@ public class Shoe implements Serializable {
 		return itemId;
 	}
 
+	public Shoe(int itemId, String itemName, String category, String shoeSize, int price) {
+		super();
+		this.itemId = itemId;
+		this.itemName = itemName;
+		this.category = category;
+		this.shoeSize = shoeSize;
+		this.price = price;
+	}
+
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
