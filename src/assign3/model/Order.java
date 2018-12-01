@@ -3,6 +3,7 @@ package assign3.model;
 import java.io.Serializable;
 import java.sql.Date;
 
+@SuppressWarnings("serial")
 public class Order implements Serializable {
 	private int orderId;
 	private int customerId;

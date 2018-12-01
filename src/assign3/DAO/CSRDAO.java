@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import assign3.model.CSR;
-import assign3.other.DBConnector;
+import assign3.others.DBConnector;
 
-public class CSRDAO {
+public class CsrDAO {
 	static Connection con;
 	static PreparedStatement pst;
 	

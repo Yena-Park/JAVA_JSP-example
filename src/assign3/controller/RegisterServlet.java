@@ -1,4 +1,4 @@
-package assign3.other;
+package assign3.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import assign3.DAO.CSRDAO;
+import assign3.DAO.CsrDAO;
 import assign3.DAO.CustomerDAO;
 
 /**
@@ -75,7 +75,7 @@ public class RegisterServlet extends HttpServlet {
 			String lastName = 
 					request.getParameter("lastName");
 			
-			CSRDAO csrDAO = new CSRDAO();
+			CsrDAO csrDAO = new CsrDAO();
 			int result = csrDAO.addCSRRow(userName, passWord, firstName, lastName);
 			System.out.println(result);
 			

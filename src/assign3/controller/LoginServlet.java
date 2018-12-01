@@ -1,4 +1,4 @@
-package assign3.other;
+package assign3.controller;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import assign3.DAO.CSRDAO;
+import assign3.DAO.CsrDAO;
 import assign3.DAO.CustomerDAO;
 import assign3.model.CSR;
 import assign3.model.Customer;
@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 		    	 response.sendRedirect("invalidLogin.jsp");
 		     }
 		} else {
-			CSR csr = CSRDAO.login(userId, passWord);
+			CSR csr = CsrDAO.login(userId, passWord);
 			if (csr.isValid()) {
 				HttpSession session = request.getSession(true);	    
 				session.setAttribute("currentCSR",csr); 

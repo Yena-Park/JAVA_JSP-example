@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import assign3.model.Shoe;
-import assign3.other.DBConnector;
+import assign3.others.DBConnector;
 
 public class ShoeDAO {
 	static Connection con;

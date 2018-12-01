@@ -2,6 +2,7 @@ package assign3.model;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Shoe implements Serializable {
 	private int itemId;
 	private String itemName;

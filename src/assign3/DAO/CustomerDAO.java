@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import assign3.model.Customer;
-import assign3.other.DBConnector;
+import assign3.others.DBConnector;
 
 public class CustomerDAO {
 	static Connection con;
@@ -95,9 +95,93 @@ public class CustomerDAO {
 			pst.close();
 			con.close();
 		} catch (Exception ex) {
-			System.out.println("Log In failed: An Exception has occurred! " + ex);
+			System.out.println("getAll failed: An Exception has occurred! " + ex);
 		} 
 		
 		return customers;
+	}
+	
+	public static int updateCustomerById(int customerId,
+			String userName, String passWord,
+			String firstName, String lastName, String address,
+			String city, String postalCode) {
+		String query = "update customer set userName= ? ,"
+				+ " passWord=?, "
+				+ "firstName = ?,"
+				+ "lastName= ?,"
+				+ " address= ?,"
+				+ " city= ?,"
+				+ " postalCode= ?"
+				+ " where customerId= ?";
+		try {
+			con = DBConnector.getConnection();
+			pst = con.prepareStatement(query);
+			
+			pst.setString(1, userName);
+			pst.setString(2, passWord);
+			pst.setString(3, firstName);
+			pst.setString(4, lastName);
+			pst.setString(5, address);
+			pst.setString(6, city);
+			pst.setString(7, postalCode);
+			pst.setInt(8, customerId);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();
+		} catch (Exception ex) {
+			System.out.println("updateCustomerById failed: An Exception has occurred! " + ex);
+		} 
+		return customerId;
+	}
+	
+	public static Customer getCustomerById(int customerId) {
+		Customer customer = null;
+		String query = "SELECT * FROM CUSTOMER where customerId = ?";    
+		
+		try {
+			con = DBConnector.getConnection();
+			pst = con.prepareStatement(query);
+			pst.setInt(1, customerId);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				customer = new Customer(
+					rs.getInt(1),
+					rs.getString(2),
+					rs.getString(3),
+					rs.getString(4),
+					rs.getString(5),
+					rs.getString(6),
+					rs.getString(7),
+					rs.getString(8)
+				);
+			}
+			
+			pst.close();
+			con.close();
+		} catch (Exception ex) {
+			System.out.println("getCustomerById failed: An Exception has occurred! " + ex);
+		} 
+		
+		return customer;
+	}
+	
+	public static int deleteCustomer(int customerId) {
+		
+		String query = "DELETE FROM CUSTOMER where customerId = ?";
+		
+		try {
+			con = DBConnector.getConnection();
+			pst = con.prepareStatement(query);
+			
+			pst.setInt(1, customerId);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();
+		} catch (Exception ex) {
+			System.out.println("deleteCustomer failed: An Exception has occurred! " + ex);
+		} 
+		return customerId;
 	}
 }

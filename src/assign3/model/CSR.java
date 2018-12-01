@@ -2,6 +2,7 @@ package assign3.model;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class CSR implements Serializable {
 	private String userName;
 	private String passWord;

@@ -1,4 +1,4 @@
-package assign3.other;
+package assign3.others;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
