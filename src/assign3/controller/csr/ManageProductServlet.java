@@ -50,11 +50,10 @@ public class ManageProductServlet extends HttpServlet {
 		if("View".equals(request.getParameter("button"))) {
 			itemId = Integer.parseInt(request.getParameter("itemId"));
 			//request.getParameter
-//			Customer customer = CustomerDAO.getCustomerById(customerId);
-//			
-//			request.setAttribute("customer", customer);
-//			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRViewCustomer.jsp");
-//			dispatcher.forward(request, response);
+			Shoe shoe = ShoeDAO.getShoeById(itemId);
+			request.setAttribute("shoe", shoe);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRViewProduct.jsp");
+			dispatcher.forward(request, response);
 		} else if ("Add".equals(request.getParameter("button"))) {
 			//
 			System.out.println(itemId);
