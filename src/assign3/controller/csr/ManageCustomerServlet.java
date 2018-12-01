@@ -35,7 +35,7 @@ public class ManageCustomerServlet extends HttpServlet {
 		
 		List<Customer> customers = CustomerDAO.getAll();
 		request.setAttribute("customers", customers);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ManagingCustomer.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRManagingCustomer.jsp");
 		dispatcher.forward(request,response);
 	}
 
@@ -50,12 +50,12 @@ public class ManageCustomerServlet extends HttpServlet {
 			Customer customer = CustomerDAO.getCustomerById(customerId);
 			
 			request.setAttribute("customer", customer);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ViewCustomer.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRViewCustomer.jsp");
 			dispatcher.forward(request, response);
 		} else if ("Edit".equals(request.getParameter("button"))) {
 			Customer customer = CustomerDAO.getCustomerById(customerId);
 			request.setAttribute("customer", customer);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EditCustomerForm.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSREditCustomerForm.jsp");
 			dispatcher.forward(request, response);
 		} else if ("Delete".equals(request.getParameter("button"))) {
 			int result = CustomerDAO.deleteCustomer(customerId);
@@ -64,6 +64,9 @@ public class ManageCustomerServlet extends HttpServlet {
 				// reload
 				doGet(request, response);
 			}
+		} else if ("Manage Order".equals(request.getParameter("button"))) {
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRViewOrders.jsp");
+			dispatcher.forward(request, response);
 		}
 		
 	}

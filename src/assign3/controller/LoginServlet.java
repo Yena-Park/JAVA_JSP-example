@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 		     {
 		          HttpSession session = request.getSession(true);	    
 		          session.setAttribute("currentCustomer",customer); 
-		          response.sendRedirect("Welcome.jsp"); // customer logged-in page      		
+		          response.sendRedirect("CUSTWelcome.jsp"); // customer logged-in page      		
 		     } else {
 		    	 response.sendRedirect("invalidLogin.jsp");
 		     }
@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 			if (csr.isValid()) {
 				HttpSession session = request.getSession(true);	    
 				session.setAttribute("currentCSR",csr); 
-				response.sendRedirect("MenuForCSR.jsp"); // csr logged-in page
+				response.sendRedirect("CSRMenu.jsp"); // csr logged-in page
 			} else {
 				response.sendRedirect("invalidLogin.jsp");
 			}

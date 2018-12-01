@@ -31,6 +31,6 @@
 	<br>
 	<div class="head">CSR Page</div><br><br>
 	<p><button class="button"><a href="ManageProductServlet">Manage Product</a></button></p>
-	<p><button class="button"><a href="ManageCustomerServlet">Manage Customer</a></button></p>
+	<p><button class="button"><a href="ManageCustomerServlet">Manage Customer / Orders</a></button></p>
 </body>
 </html>

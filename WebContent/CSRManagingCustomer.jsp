@@ -47,6 +47,7 @@
 		<input type="submit" name="button" value="View" class="button"/>
 		<input type="submit" name="button" value="Edit" class="button"/>
 		<input type="submit" name="button" value="Delete" class="button"/>
+		<input type="submit" name="button" value="Manage Order" class="button"/>
 	</form>
 </body>
 </html>
