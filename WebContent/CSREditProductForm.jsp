@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="assign3.model.Shoe" %>
 <!DOCTYPE html>  
 <html>  
@@ -10,11 +11,21 @@
 <body>  
 
 	<jsp:include page="/common.jsp" />
-  
-	<%  
-		Shoe shoe = (Shoe) request.getAttribute("shoe");  
-	%>  
-	<h1>Edit Shoe</h1>  
+  	
+    <%  
+		Shoe shoe = (Shoe) request.getAttribute("shoe");
+		if(shoe.isNew) {
+	%>
+		<h1>Add New Shoe</h1>
+		
+	<%			
+		} else  {
+	%>
+		<h1>Edit Shoe</h1>
+	<%		
+		}
+	%>
+
 	<form action="EditShoeServlet" method="post">  
 		<input type="hidden" name="itemId" value="<%=shoe.getItemId() %>"/>  
 		<table>
@@ -25,10 +36,22 @@
 			<tr><td>Item Size:</td><td>  
 			<input type="text" name="shoeSize" value="<%=shoe.getShoeSize()%>"/></td></tr>  
 			<tr><td>Price:</td><td>  
-			<input type="text" name="price" value="<%=shoe.getPrice()%>"/></td></tr>  
-			<tr><td colspan="2"><input type="submit" value="Edit Shoe"/></td></tr>  
+			<input type="text" name="price" value="<%=shoe.getPrice()%>"/></td></tr>
+			<%  
+				if(shoe.isNew) {
+			%>
+				<tr><td colspan="2"><input type="submit" name="viewType" value="Add Shoe"/></td></tr>
+			<%			
+				} else  {
+			%>
+				<tr><td colspan="2"><input type="submit" name="viewType" value="Edit Shoe"/></td></tr>
+			<%		
+				}
+			%>
 			<tr><td colspan="2"><input type="submit" value="Cancel"/></td></tr>    
 		</table>  
 	</form> 
+	
+	
 </body>
 </html>

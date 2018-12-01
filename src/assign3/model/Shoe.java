@@ -10,8 +10,13 @@ public class Shoe implements Serializable {
 	private String shoeSize;
 	private int price;
 
+	public boolean isNew;
+	
 	public Shoe() {
 		super();
+		this.itemName = "";
+		this.category = "";
+		this.shoeSize = "";
 	}
 
 	public int getItemId() {

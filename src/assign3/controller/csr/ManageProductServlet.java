@@ -55,11 +55,15 @@ public class ManageProductServlet extends HttpServlet {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSRViewProduct.jsp");
 			dispatcher.forward(request, response);
 		} else if ("Add".equals(request.getParameter("button"))) {
-			//
-			System.out.println(itemId);
+			Shoe shoe = new Shoe();
+			shoe.isNew = true;
+			request.setAttribute("shoe", shoe);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSREditProductForm.jsp");
+			dispatcher.forward(request, response);
 		} else if ("Edit".equals(request.getParameter("button"))) {
 			itemId = Integer.parseInt(request.getParameter("itemId"));
 			Shoe shoe = ShoeDAO.getShoeById(itemId);
+			shoe.isNew = false;
 			request.setAttribute("shoe", shoe);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CSREditProductForm.jsp");
 			dispatcher.forward(request, response);

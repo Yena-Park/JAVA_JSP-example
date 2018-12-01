@@ -10,7 +10,6 @@
 </head>  
 <body>  
 
-  
 	<jsp:include page="/common.jsp" />  
 	<%  
 		Shoe shoe = (Shoe) request.getAttribute("shoe");  

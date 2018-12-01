@@ -38,6 +38,9 @@ public class EditShoeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		String viewType = request.getParameter("viewType");
+		
 		String itemName = 
 				request.getParameter("itemName");
 		String category = 
@@ -49,13 +52,19 @@ public class EditShoeServlet extends HttpServlet {
 		int itemId = 
 				Integer.parseInt(request.getParameter("itemId"));
 		
-		int result = ShoeDAO.updateShoeById(itemId, itemName, category, shoeSize, price);
-		
-		if ( result == itemId ) {
+		int result = -1;
+		if ("Add Shoe".equals(viewType)) {
+			result = ShoeDAO.insertShoe(itemName, category, shoeSize, price);
 			response.sendRedirect("ManageProductServlet");
-		} else {
-			//TODO: error message
+		} else  {
+			result = ShoeDAO.updateShoeById(itemId, itemName, category, shoeSize, price);
+			if ( result == itemId ) {
+				response.sendRedirect("ManageProductServlet");
+			} else {
+				//TODO: error message
+			}
 		}
+		
 	}
 
 }

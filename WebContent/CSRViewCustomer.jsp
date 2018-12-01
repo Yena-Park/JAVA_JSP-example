@@ -12,9 +12,9 @@
 
   
 	<jsp:include page="/common.jsp" />  
-<%  
-	Customer customer = (Customer) request.getAttribute("customer");  
-%>  
+	<%  
+		Customer customer = (Customer) request.getAttribute("customer");  
+	%>  
 	<div>
 		<h1>View Customer</h1>  
 		<input type="hidden" name="customerId" value="<%=customer.getCustomerId() %>"/>  
