@@ -10,12 +10,15 @@
 		font-family: arial;
 	}
 	div.head{
-			width: 310px; height: 40px;
-			background-color: #ddbe9f;
-			color: #1c3f61;
-			font-family: arial;
-			font-size: 35px;
-			font-weight: 900;
+		width: 310px; height: 40px;
+		background-color: #ddbe9f;
+		color: #1c3f61;
+		font-family: arial;
+		font-size: 35px;
+		font-weight: 900;
+	}
+	table {
+		width: 500px;
 	}
 	.button {
 		background-color: #ddbe9f;

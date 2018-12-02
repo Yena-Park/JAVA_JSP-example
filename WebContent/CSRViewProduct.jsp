@@ -50,7 +50,12 @@
 <title>View Customer</title>  
 </head>  
 <body>  
-
+	<div class="topnav">
+	  <a class="active" href="#">CSR Page</a>
+	  <a href="#men">Men</a>
+	  <a href="#women">Women</a>
+	  <a href="#kid">Kid</a>
+	</div><br>
 	<jsp:include page="/common.jsp" />  
 	<%  
 		Shoe shoe = (Shoe) request.getAttribute("shoe");  
@@ -66,11 +71,11 @@
 			<tr><td>Shoe Size:</td><td>  
 			<div><%=shoe.getShoeSize()%></div>
 			<tr><td>Price:</td><td>  
-			<div><%=shoe.getPrice()%></div>
-			<div>
-				<a href="ManageProductServlet">Product List</a>
-			</div>    
-		</table>  
+			<div><%=shoe.getPrice()%></div>   
+		</table>
+		<div>
+			<a href="ManageProductServlet">Product List</a>
+		</div> 
 	</div>
 </body>  
 </html>  

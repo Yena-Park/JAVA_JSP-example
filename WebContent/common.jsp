@@ -7,39 +7,88 @@
 <style>
 	body {
 		font-family: arial;
+		width: 960px;
+		margin: 0 auto;
 	}
-	.common {
-		width: 600px; height: 40px;
+	#main_header {
+		width: 960px;
+		margin: 0 auto;
+		height: 70px;
+		position: relative;
+	}
+	
+	#main_header .common {
 		color: #1c3f61;
 		font-family: arial;
-		font-size: 35px;
+		font-size: 15px;
 		font-weight: 900;
+		position: absolute;
+		right: 20px;
+		top: 0px;
 	}
+	
 	.common-button {
 		background-color: #1c3f61;
 		color: #ddbe9f;
 		border: none;
-    }
-
+	}
+	
+	.topnav {
+		overflow: hidden;
+		background-color: #ddbe9f;
+		position: absolute;
+		top: 20px;
+		width: 100%;
+		height: 50px;
+	}
+	
+	.topnav #logo {
+		background-color: #1b2233;
+		color: white;
+	}
+	
+	.topnav a {
+		float: left;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		height: 50px;
+	}
 </style>
 <%
 	Customer customer = (Customer)session.getAttribute("currentCustomer");
 	CSR csr = (CSR)session.getAttribute("currentCSR");
 	
 	if(customer != null) {
-		out.print("<div>");
-		out.print("<div class=\"common\">WELCOME, " + customer.getUserName() + " " + customer.getFirstName() + " " + customer.getLastName() + "</div>");
-		out.print("<form method=\"link\" action=\"HomePage.jsp\">"
-		    	+ "<input type=\"submit\" value=\"Log out\"/>"
-			+ "</form>");
-		out.print("</div>");
+%>
+	<div id="main_header">
+		<div class="common">WELCOME, <%= customer.getFirstName()%> <%=customer.getLastName()%>&nbsp;
+			<a href="Logout.jsp">
+				<button>Log out</button>
+			</a>
+		</div>
+		<div class="topnav">
+			<a id="logo" href="#">Shoe Shopping Mall</a>
+		</div>
+	</div>
+	<br>
+<%
 	} else if (csr != null) {
-		out.print("<div>");
-		out.print("<div class=\"common\">WELCOME, " + csr.getUserName() + " " + csr.getFirstName() + " " + csr.getLastName() + "</div>");
-		out.print("<form method=\"link\" action=\"Logout.jsp\">"
-			    	+ "<input type=\"submit\" value=\"Log out\"/>"
-				+ "</form>");
-		out.print("</div>");
+%>
+		
+	<div id="main_header">
+		<div class="common">WELCOME, <%=csr.getFirstName()%> <%=csr.getLastName()%>&nbsp;
+			<a href="Logout.jsp">
+				<button>Log out</button>
+			</a>
+		</div>
+		<div class="topnav">
+			<a id="logo" href="#">Shoe Shopping Mall ( CSR Page )</a>
+		</div>
+	</div>
+<%
 	} else {
 	}
 %>
