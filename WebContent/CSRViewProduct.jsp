@@ -5,7 +5,48 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">  
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style>
+	body {
+		font-family: arial;
+	}
+	div.head{
+			width: 310px; height: 40px;
+			background-color: #ddbe9f;
+			color: #1c3f61;
+			font-family: arial;
+			font-size: 35px;
+			font-weight: 900;
+	}
+	.button {
+		background-color: #ddbe9f;
+		color: #1c3f61;
+		border: none;
+	}
+	.topnav {
+		overflow: hidden;
+		background-color: #ddbe9f;
+	}
+		
+	.topnav a {
+		float: left;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+		
+	.topnav a:hover {
+		background-color: #1c3f61;
+		color: white;
+	}
+		
+	.topnav a.active {
+		background-color: #1c3f61;
+		color: white;
+	}
+</style>
 <title>View Customer</title>  
 </head>  
 <body>  

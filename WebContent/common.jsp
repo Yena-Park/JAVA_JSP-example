@@ -5,9 +5,11 @@
 <%@ page import="assign3.model.CSR" %>
 
 <style>
+	body {
+		font-family: arial;
+	}
 	.common {
 		width: 600px; height: 40px;
-		background-color: #ddbe9f;
 		color: #1c3f61;
 		font-family: arial;
 		font-size: 35px;
@@ -18,6 +20,7 @@
 		color: #ddbe9f;
 		border: none;
     }
+
 </style>
 <%
 	Customer customer = (Customer)session.getAttribute("currentCustomer");
@@ -25,14 +28,14 @@
 	
 	if(customer != null) {
 		out.print("<div>");
-		out.print("<div class=\"common\">WELCOME " + customer.getUserName() + " " + customer.getFirstName() + " " + customer.getLastName() + "</div>");
+		out.print("<div class=\"common\">WELCOME, " + customer.getUserName() + " " + customer.getFirstName() + " " + customer.getLastName() + "</div>");
 		out.print("<form method=\"link\" action=\"HomePage.jsp\">"
 		    	+ "<input type=\"submit\" value=\"Log out\"/>"
 			+ "</form>");
 		out.print("</div>");
 	} else if (csr != null) {
 		out.print("<div>");
-		out.print("<div class=\"common\">WELCOME " + csr.getUserName() + " " + csr.getFirstName() + " " + csr.getLastName() + "</div>");
+		out.print("<div class=\"common\">WELCOME, " + csr.getUserName() + " " + csr.getFirstName() + " " + csr.getLastName() + "</div>");
 		out.print("<form method=\"link\" action=\"Logout.jsp\">"
 			    	+ "<input type=\"submit\" value=\"Log out\"/>"
 				+ "</form>");

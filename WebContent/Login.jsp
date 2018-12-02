@@ -5,10 +5,11 @@
 <head>
 <meta charset="UTF-8">
 	<style>
-		p.head{
-			background-color: #ddbe9f;
-			color: #1c3f61;
+		body {
 			font-family: arial;
+		}
+		p.head{
+			color: #1c3f61;
 			font-size: 35px;
 			font-weight: 900;
 		}
@@ -16,11 +17,37 @@
 			background-color: #1c3f61;
 			color: #ddbe9f;
 			border: none;
-	    }
+		}
+		.topnav {
+			overflow: hidden;
+			background-color: #ddbe9f;
+		}
+			
+		.topnav a {
+			float: left;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+			
+		.topnav a:hover {
+			background-color: #1c3f61;
+			color: white;
+		}
+			
+		.topnav a.active {
+			background-color: #1c3f61;
+			color: white;
+		}
 	</style>
 <title>Insert title here</title>
 </head>
 <body>
+	<div class="topnav">
+	  <a class="active" href="#login">Login</a>
+	</div>
 	<p class="head">Shoe Shopping Mall</p>
 	<form name="" method="post" action="LoginServlet">
 		<div>
