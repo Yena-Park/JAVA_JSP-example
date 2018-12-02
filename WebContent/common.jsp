@@ -70,7 +70,7 @@
 			</a>
 		</div>
 		<div class="topnav">
-			<a id="logo" href="CUSTWelcom.jsp">Shoe Shopping Mall</a>
+			<a id="logo" href="WelcomeController">Shoe Shopping Mall</a>
 		</div>
 	</div>
 	<br>
