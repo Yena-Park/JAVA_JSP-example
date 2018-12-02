@@ -11,16 +11,16 @@ import assign3.DAO.CsrDAO;
 import assign3.DAO.CustomerDAO;
 
 /**
- * Servlet implementation class RegisterServlet
+ * Servlet implementation class RegisterController
  */
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/RegisterController")
+public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterServlet() {
+    public RegisterController() {
         super();
         // TODO Auto-generated constructor stub
     }

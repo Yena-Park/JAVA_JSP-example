@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,6 +57,26 @@
 		color: black;
 	}
 	
+	.items {
+		position: relative;
+		display: block;
+	}
+	.item {
+		width: 300px;
+		height: 300px;
+		float: left;
+	}
+	
+	.item img {
+		width: 200px;
+		height: 200px;
+	}
+	
+	.tab_item button {
+		width: 100px;
+		height: 30px;
+	}
+	
 	</style>
 <title>Insert title here</title>
 </head>
@@ -73,23 +95,57 @@
 			</section>
 			
 			<div class="tab_item" id="men">
-				<ul>
-					<li>men</li>
+				<ul class="items">
+					<c:forEach items="${menShoes}" var="shoe">
+						<li class="item">
+							<img src="image/men/default.png" />
+							<div>
+								<p>${shoe.itemName}</p>
+								<p>${shoe.shoeSize}</p>
+								<p>${shoe.category}</p>
+								<p>${shoe.price}</p>
+							</div>
+						</li>
+					</c:forEach>
 				</ul>
+				
+				<button>Order</button>
 			</div>
 			<div class="tab_item" id="women">
-				<ul>
-					<li>women</li>
+				<ul class="items">
+					<c:forEach items="${womenShoes}" var="shoe">
+						<li>
+							<div class="item">
+								<img src="image/women/default.png" />
+								<p>${shoe.itemName}</p>
+								<p>${shoe.shoeSize}</p>
+								<p>${shoe.category}</p>
+								<p>${shoe.price}</p>
+							</div>
+						</li>
+					</c:forEach>
 				</ul>
+				
+				<button>Order</button>
 			</div>
 			<div class="tab_item" id="kid">
-				<ul>
-					<li>kid</li>
+				<ul class="items">
+					<c:forEach items="${kidShoes}" var="shoe">
+						<li>
+							<div class="item">
+								<img src="image/kid/default.png" />
+								<p>${shoe.itemName}</p>
+								<p>${shoe.shoeSize}</p>
+								<p>${shoe.category}</p>
+								<p>${shoe.price}</p>
+							</div>
+						</li>
+					</c:forEach>
 				</ul>
+				
+				<button>Order</button>
 			</div>
 		</div>
-
-		<button>Order</button>
 	</div>
 	<br>
 </body>

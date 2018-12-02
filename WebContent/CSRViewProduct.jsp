@@ -23,44 +23,27 @@
 		color: #1c3f61;
 		border: none;
 	}
-	.topnav {
-		overflow: hidden;
-		background-color: #ddbe9f;
+
+	#main {
+		width: 960px;
+		margin: 0 auto;
+		text-align:center;
 	}
-		
-	.topnav a {
-		float: left;
-		color: #f2f2f2;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-		font-size: 17px;
+	#main table {
+		width: 60%;
+		margin-left: 20%;
+		margin-right: 20%;
 	}
-		
-	.topnav a:hover {
-		background-color: #1c3f61;
-		color: white;
-	}
-		
-	.topnav a.active {
-		background-color: #1c3f61;
-		color: white;
-	}
+	
 </style>
 <title>View Customer</title>  
 </head>  
-<body>  
-	<div class="topnav">
-	  <a class="active" href="#">CSR Page</a>
-	  <a href="#men">Men</a>
-	  <a href="#women">Women</a>
-	  <a href="#kid">Kid</a>
-	</div><br>
+<body>
 	<jsp:include page="/common.jsp" />  
 	<%  
 		Shoe shoe = (Shoe) request.getAttribute("shoe");  
 	%>  
-	<div>
+	<div id="main">
 		<h1>View Product</h1>  
 		<input type="hidden" name="itemId" value="<%=shoe.getItemId() %>"/>  
 		<table>  
@@ -74,7 +57,7 @@
 			<div><%=shoe.getPrice()%></div>   
 		</table>
 		<div>
-			<a href="ManageProductServlet">Product List</a>
+			<a href="ManageProductController">Product List</a>
 		</div> 
 	</div>
 </body>  

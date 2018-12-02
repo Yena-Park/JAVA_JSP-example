@@ -15,16 +15,16 @@ import assign3.model.CSR;
 import assign3.model.Customer;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class LoginController
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/LoginController")
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public LoginController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 		     {
 		          HttpSession session = request.getSession(true);	    
 		          session.setAttribute("currentCustomer",customer); 
-		          response.sendRedirect("CUSTWelcome.jsp"); // customer logged-in page      		
+		          response.sendRedirect("WelcomeController"); // customer logged-in page      		
 		     } else {
 		    	 response.sendRedirect("invalidLogin.jsp");
 		     }

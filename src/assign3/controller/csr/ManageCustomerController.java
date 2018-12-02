@@ -16,16 +16,16 @@ import assign3.model.Customer;
 import assign3.model.Order;
 
 /**
- * Servlet implementation class ManageCustomerServlet
+ * Servlet implementation class ManageCustomerController
  */
-@WebServlet("/ManageCustomerServlet")
-public class ManageCustomerServlet extends HttpServlet {
+@WebServlet("/ManageCustomerController")
+public class ManageCustomerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManageCustomerServlet() {
+    public ManageCustomerController() {
         super();
         // TODO Auto-generated constructor stub
     }

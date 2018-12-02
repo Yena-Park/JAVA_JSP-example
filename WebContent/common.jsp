@@ -70,7 +70,7 @@
 			</a>
 		</div>
 		<div class="topnav">
-			<a id="logo" href="#">Shoe Shopping Mall</a>
+			<a id="logo" href="CUSTWelcom.jsp">Shoe Shopping Mall</a>
 		</div>
 	</div>
 	<br>
@@ -85,7 +85,7 @@
 			</a>
 		</div>
 		<div class="topnav">
-			<a id="logo" href="#">Shoe Shopping Mall ( CSR Page )</a>
+			<a id="logo" href="CSRMenu.jsp">Shoe Shopping Mall ( CSR Page )</a>
 		</div>
 	</div>
 <%

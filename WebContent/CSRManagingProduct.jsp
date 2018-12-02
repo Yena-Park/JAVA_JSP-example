@@ -9,6 +9,13 @@
 	body {
 		font-family: arial;
 	}
+	#main {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
 	div.head{
 		width: 310px; height: 40px;
 		background-color: #ddbe9f;
@@ -18,11 +25,13 @@
 		font-weight: 900;
 	}
 	table {
-		width: 500px;
+		width: 100%;
 	}
 	.button {
 		background-color: #ddbe9f;
 		color: #1c3f61;
+		width: 100px;
+		height: 30px;
 		border: none;
 	}
 	.topnav {
@@ -52,40 +61,36 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="topnav">
-	  <a class="active" href="#login">CSR Page</a>
-	  <a href="#men">Men</a>
-	  <a href="#women">Women</a>
-	  <a href="#kid">Kid</a>
-	</div><br>
 	<jsp:include page="/common.jsp" /><br><br>
 
-	<form method="post" action="ManageProductServlet">
-		<table>
-			<tr>
-				<th></th>
-				<th>Shoe Id</th>
-				<th>Product Name</th>
-				<th>Category</th>
-				<th>shoeSize</th>
-				<th>price</th>
-			</tr>
-			<c:forEach items="${shoes}" var="shoe">
+	<div id="main">
+		<form method="post" action="ManageProductController">
+			<table>
 				<tr>
-					<td><input type="radio" name="itemId" value="${shoe.itemId}"/></td>
-					<td>${shoe.itemId}</td>
-					<td>${shoe.itemName}</td>
-					<td>${shoe.category}</td>
-					<td>${shoe.shoeSize}</td>
-					<td>${shoe.price}</td>
+					<th></th>
+					<th>Shoe Id</th>
+					<th>Product Name</th>
+					<th>Category</th>
+					<th>shoeSize</th>
+					<th>price</th>
 				</tr>
-			</c:forEach>
-		</table>
-	
-		<input type="submit" name="button" value="View" class="button"/>
-		<input type="submit" name="button" value="Add" class="button"/>
-		<input type="submit" name="button" value="Edit" class="button"/>
-		<input type="submit" name="button" value="Delete" class="button"/>
-	</form>
+				<c:forEach items="${shoes}" var="shoe">
+					<tr>
+						<td><input type="radio" name="itemId" value="${shoe.itemId}"/></td>
+						<td>${shoe.itemId}</td>
+						<td>${shoe.itemName}</td>
+						<td>${shoe.category}</td>
+						<td>${shoe.shoeSize}</td>
+						<td>${shoe.price}</td>
+					</tr>
+				</c:forEach>
+			</table>
+		
+			<input type="submit" name="button" value="View" class="button"/>
+			<input type="submit" name="button" value="Add" class="button"/>
+			<input type="submit" name="button" value="Edit" class="button"/>
+			<input type="submit" name="button" value="Delete" class="button"/>
+		</form>
+	</div>
 </body>
 </html>

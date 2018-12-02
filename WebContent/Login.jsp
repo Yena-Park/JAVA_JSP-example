@@ -8,6 +8,11 @@
 		body {
 			font-family: arial;
 		}
+		#login_main {
+			width: 960px;
+			margin: 0 auto;
+			text-align:center;
+		}
 		p.head{
 			color: #1c3f61;
 			font-size: 35px;
@@ -21,6 +26,7 @@
 		.topnav {
 			overflow: hidden;
 			background-color: #ddbe9f;
+			height: 50px;
 		}
 			
 		.topnav a {
@@ -46,20 +52,21 @@
 </head>
 <body>
 	<div class="topnav">
-	  <a class="active" href="#login">Login</a>
 	</div>
-	<p class="head">Shoe Shopping Mall</p>
-	<form name="" method="post" action="LoginServlet">
-		<div>
-			<input type="radio" id="customer" name="userType" value="Customer"/>
-			<label>Customer</label>
-			<input type="radio" id="CSR" name="userType" value="CSR"/>
-			<label>CSR</label>
-			<p> ID: <input type="text" id="userId" name="userId" /></p>
-			<p>PW: <input type="password" id="userPw" name="userPw" /></p>
-		</div>
-		<button class="button" type="submit">Login</button>
-	</form>
-	<p>New User? <a href="RegisterForm.jsp">Click Here!</a></p><!--Hyperlink 걸어야함 -->
+	<div id="login_main">
+		<p class="head">Shoe Shopping Mall</p>
+		<form method="post" action="LoginController">
+			<div>
+				<input type="radio" id="customer" checked="checked" name="userType" value="Customer"/>
+				<label>Customer</label>
+				<input type="radio" id="CSR" name="userType" value="CSR"/>
+				<label>CSR</label>
+				<p> ID: <input type="text" id="userId" name="userId" /></p>
+				<p>PW: <input type="password" id="userPw" name="userPw" /></p>
+			</div>
+			<button class="button" type="submit">Login</button>
+		</form>
+		<p>New User? <a href="RegisterForm.jsp">Click Here!</a></p><!--Hyperlink 걸어야함 -->
+	</div>
 </body>
 </html>

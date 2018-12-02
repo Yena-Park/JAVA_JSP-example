@@ -15,16 +15,16 @@ import assign3.DAO.ShoeDAO;
 import assign3.model.Shoe;
 
 /**
- * Servlet implementation class ManageProductServlet
+ * Servlet implementation class ManageProductController
  */
-@WebServlet("/ManageProductServlet")
-public class ManageProductServlet extends HttpServlet {
+@WebServlet("/ManageProductController")
+public class ManageProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManageProductServlet() {
+    public ManageProductController() {
         super();
         // TODO Auto-generated constructor stub
     }

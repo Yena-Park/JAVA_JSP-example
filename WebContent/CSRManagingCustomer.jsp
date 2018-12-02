@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 	<style>
+		#main {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			text-align: center;
+			margin: 0 auto;
+		}
+	
 		p.head{
 			background-color: #ddbe9f;
 			color: #1c3f61;
@@ -33,6 +41,8 @@
 			background-color: #ddbe9f;
 			color: #1c3f61;
 			border: none;
+			width: 100px;
+			height: 30px;
 		}
 		.topnav {
 			overflow: hidden;
@@ -57,41 +67,41 @@
 			background-color: #1c3f61;
 			color: white;
 		}
+		table {
+			width: 100%;
+		}
 	</style>
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="topnav">
-	  <a class="active" href="#login">CSR Page</a>
-	  <a href="#men">Men</a>
-	  <a href="#women">Women</a>
-	  <a href="#kid">Kid</a>
-	</div><br>
 	<jsp:include page="/common.jsp" /> <br><br>
-	<form method="post" action="ManageCustomerServlet">
-		<table>
-			<tr>
-				<th></th>
-				<th>Customer Id</th>
-				<th>User Name</th>
-				<th>First Name</th>
-				<th>Last Name</th>
-			</tr>
-			<c:forEach items="${customers}" var="customer">
-				<tr>
-					<td><input type="radio" name="customerId" value="${customer.customerId}"/></td>
-					<td>${customer.customerId}</td>
-					<td>${customer.userName}</td>
-					<td>${customer.firstName}</td>
-					<td>${customer.lastName}</td>
-				</tr>
-			</c:forEach>
-		</table>
 	
-		<input type="submit" name="button" value="View" class="button"/>
-		<input type="submit" name="button" value="Edit" class="button"/>
-		<input type="submit" name="button" value="Delete" class="button"/>
-		<input type="submit" name="button" value="Manage Order" class="button"/>
-	</form>
+	<div id="main">
+		<form method="post" action="ManageCustomerController">
+			<table>
+				<tr>
+					<th></th>
+					<th>Customer Id</th>
+					<th>User Name</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+				</tr>
+				<c:forEach items="${customers}" var="customer">
+					<tr>
+						<td><input type="radio" name="customerId" value="${customer.customerId}"/></td>
+						<td>${customer.customerId}</td>
+						<td>${customer.userName}</td>
+						<td>${customer.firstName}</td>
+						<td>${customer.lastName}</td>
+					</tr>
+				</c:forEach>
+			</table>
+		
+			<input type="submit" name="button" value="View" class="button"/>
+			<input type="submit" name="button" value="Edit" class="button"/>
+			<input type="submit" name="button" value="Delete" class="button"/>
+			<input type="submit" name="button" value="Manage Order" class="button"/>
+		</form>
+	</div>
 </body>
 </html>

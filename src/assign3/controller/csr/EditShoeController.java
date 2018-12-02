@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import assign3.DAO.ShoeDAO;
 
 /**
- * Servlet implementation class EditShoeServlet
+ * Servlet implementation class EditShoeController
  */
-@WebServlet("/EditShoeServlet")
-public class EditShoeServlet extends HttpServlet {
+@WebServlet("/EditShoeController")
+public class EditShoeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditShoeServlet() {
+    public EditShoeController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -55,11 +55,11 @@ public class EditShoeServlet extends HttpServlet {
 		int result = -1;
 		if ("Add Shoe".equals(viewType)) {
 			result = ShoeDAO.insertShoe(itemName, category, shoeSize, price);
-			response.sendRedirect("ManageProductServlet");
+			response.sendRedirect("ManageProductController");
 		} else  {
 			result = ShoeDAO.updateShoeById(itemId, itemName, category, shoeSize, price);
 			if ( result == itemId ) {
-				response.sendRedirect("ManageProductServlet");
+				response.sendRedirect("ManageProductController");
 			} else {
 				//TODO: error message
 			}

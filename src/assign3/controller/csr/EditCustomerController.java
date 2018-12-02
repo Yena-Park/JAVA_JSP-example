@@ -1,4 +1,4 @@
-package assign3.controller.customer;
+package assign3.controller.csr;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import assign3.DAO.CustomerDAO;
+
 /**
- * Servlet implementation class WelcomeServlet
+ * Servlet implementation class EditCustomerController
  */
-@WebServlet("/WelcomeServlet")
-public class WelcomeServlet extends HttpServlet {
+@WebServlet("/EditCustomerController")
+public class EditCustomerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public WelcomeServlet() {
+    public EditCustomerController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +37,31 @@ public class WelcomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String userName = 
+				request.getParameter("userName");
+		String passWord = 
+				request.getParameter("password");
+		String firstName = 
+				request.getParameter("firstName");
+		String lastName = 
+				request.getParameter("lastName");
+		String address = 
+				request.getParameter("address");
+		String city = 
+				request.getParameter("city");
+		String postalCode = 
+				request.getParameter("postalCode");
+		int customerId = Integer.parseInt(request.getParameter("customerId"));
+		
+		int result = CustomerDAO.updateCustomerById(customerId, userName, passWord, firstName, lastName, address, city, postalCode);
+		System.out.println(result);
+		if (result == customerId) {
+			response.sendRedirect("ManageCustomerController");
+		} else {
+			//TODO: error message
+		}
+		
 	}
 
 }
