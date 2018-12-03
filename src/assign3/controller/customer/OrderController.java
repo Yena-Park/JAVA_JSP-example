@@ -1,11 +1,19 @@
 package assign3.controller.customer;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import assign3.DAO.CustomerDAO;
+import assign3.DAO.OrderDAO;
+import assign3.model.Customer;
+import assign3.model.Order;
 
 /**
  * Servlet implementation class OrderController
@@ -36,6 +44,23 @@ public class OrderController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("TODO: Order Page, Select quantity").append(request.getContextPath());
+		
+		String From = request.getParameter("jsp");
+		
+		if(From.equals("CUSTMyPage")) {
+			String submitType = request.getParameter("submit");
+			int orderId = Integer.parseInt(request.getParameter("orderId"));
+			if("Edit Order".equals(submitType)) {
+				int quantity = Integer.parseInt(request.getParameter("quantity"));
+				OrderDAO.UpdateOrderQuantityById(orderId, quantity);
+			} else {
+				OrderDAO.deleteById(orderId);				
+			}
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/MyPageController");
+			dispatcher.forward(request, response);
+		} else if(From.equals("CUSTWelcome")) {
+			
+		}
 	}
 
 }

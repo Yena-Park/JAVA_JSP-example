@@ -90,6 +90,25 @@ public class OrderDAO {
 		return orderId;
 	}
 	
+	public static int UpdateOrderQuantityById(int orderId, int quantity) {
+		String query = "UPDATE orders set quantity=? where orderId = ?";
+		
+		try {
+			con = DBConnector.getConnection();
+			pst = con.prepareStatement(query);
+			
+			pst.setInt(1, quantity);
+			pst.setInt(2, orderId);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return orderId;
+	}
+	
 	public static int deleteById(int orderId) {
 		String query = "DELETE FROM orders where orderId = ?";
 		

@@ -74,7 +74,7 @@
 		
 		<div class="common">WELCOME, <%= customer.getFirstName()%> <%=customer.getLastName()%>&nbsp;
 			
-			<form id="form" action="MyPageController">	
+			<form id="form" action="MyPageController" method="post">	
 				<input type="hidden" name="customerId" value="<%=customer.getCustomerId()%>" />		
 				<input type="submit" name="button" value="My Orders" />
 			</form>
