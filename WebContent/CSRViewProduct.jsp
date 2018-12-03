@@ -49,7 +49,7 @@
 	<div id="main">
 		<h1>View Product</h1>  
 		<input type="hidden" name="itemId" value="<%=shoe.getItemId() %>"/>
-		<img src="image/${shoe.itemName}.jpg"></img>  
+		<img src="image/${shoe.itemName}.png"></img>  
 		<table>  
 			<tr><td>Item Name:</td><td>  
 			<div><%=shoe.getItemName()%></div>

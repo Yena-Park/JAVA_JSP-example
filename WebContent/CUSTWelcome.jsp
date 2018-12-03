@@ -75,8 +75,8 @@
 	}
 	
 	.item img {
-		width: 200px;
-		height: 200px;
+		width: 265px;
+		height: 165px;
 	}
 	
 	.tab_item button {
@@ -105,7 +105,7 @@
 				<label for="women">Women</label>
 				<label for="kid">Kid</label>
 			</section>
-			
+			<br><br><br>
 			<div class="tab_item" id="men">
 				<ul class="items">
 					<c:forEach items="${menShoes}" var="shoe">
@@ -113,7 +113,7 @@
 							<form action="OrderController">
 								<input type="hidden" name="customerId" value="${customerId}">
 								<div class="item_desc">
-									<img src="image/${shoe.itemName}.jpg"></img>
+									<img src="image/${shoe.itemName}.png"></img>
 									<p>${shoe.itemName}</p>
 									<p>size: ${shoe.shoeSize}</p>
 									<p>price: $ ${shoe.price}</p>
@@ -131,7 +131,7 @@
 							<form action="OrderController">
 								<input type="hidden" name="customerId" value="${customerId}">
 								<div class="item_desc">
-									<img src="image/${shoe.itemName}.jpg"></img>
+									<img src="image/${shoe.itemName}.png"></img>
 									<p>${shoe.itemName}</p>
 									<p>size: ${shoe.shoeSize}</p>
 									<p>price: $ ${shoe.price}</p>
@@ -149,7 +149,7 @@
 							<form action="OrderController">
 								<input type="hidden" name="customerId" value="${customerId}">
 								<div class="item_desc">
-									<img src="image/${shoe.itemName}.jpg"></img>
+									<img src="image/${shoe.itemName}.png"></img>
 									<p>${shoe.itemName}</p>
 									<p>size: ${shoe.shoeSize}</p>
 									<p>price: $ ${shoe.price}</p>
