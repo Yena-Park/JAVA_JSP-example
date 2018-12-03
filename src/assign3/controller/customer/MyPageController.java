@@ -2,6 +2,7 @@ package assign3.controller.customer;
 
 import java.io.IOException;
 import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import assign3.DAO.CustomerDAO;
 import assign3.DAO.OrderDAO;
+import assign3.DAO.ShoeDAO;
 import assign3.model.Customer;
 import assign3.model.Order;
+import assign3.model.Shoe;
 
 /**
  * Servlet implementation class MyPageController

@@ -43,7 +43,6 @@ public class OrderController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("TODO: Order Page, Select quantity").append(request.getContextPath());
 		
 		String From = request.getParameter("jsp");
 		
@@ -56,10 +55,19 @@ public class OrderController extends HttpServlet {
 			} else {
 				OrderDAO.deleteById(orderId);				
 			}
+
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/MyPageController");
 			dispatcher.forward(request, response);
-		} else if(From.equals("CUSTWelcome")) {
-			
+		} else if(From.equals("CUSTWelcome") && request.getParameter("customerId") != "") {
+			int itemId = Integer.parseInt(request.getParameter("itemId"));
+			int customerId = Integer.parseInt(request.getParameter("customerId"));
+			int quantity = 1;
+			OrderDAO.addOrder(customerId, itemId, quantity);
+
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/MyPageController");
+			dispatcher.forward(request, response);
+		} else {
+			response.getWriter().append("Please login.").append(request.getContextPath());
 		}
 	}
 

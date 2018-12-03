@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="assign3.model.Customer" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,6 +98,9 @@
 	
 	<div id="main">
 		<div id="main_tab">
+		<%
+			Customer customer = (Customer)session.getAttribute("currentCustomer");
+		%>
 			<input type="radio" id="men" checked="checked" name="tab" value="Men"/>
 			<input type="radio" id="women" name="tab" value="Women"/>
 			<input type="radio" id="kid" name="tab" value="Kid"/>
@@ -110,8 +114,14 @@
 				<ul class="items">
 					<c:forEach items="${menShoes}" var="shoe">
 						<li class="item">
-							<form action="OrderController">
-								<input type="hidden" name="customerId" value="${customerId}">
+							<form method="post" action="OrderController">
+								<input type="hidden" name="jsp" value="CUSTWelcome">
+								<%
+									if(customer != null) {
+										out.println("<input type=\"hidden\" name=\"customerId\" value=\""+customer.getCustomerId()+"\"/>");		
+									}
+								%>
+								<input type="hidden" name="itemId" value="${shoe.itemId}">
 								<div class="item_desc">
 									<img src="image/${shoe.itemName}.png"></img>
 									<p>${shoe.itemName}</p>
@@ -128,8 +138,14 @@
 				<ul class="items">
 					<c:forEach items="${womenShoes}" var="shoe">
 						<li class="item">
-							<form action="OrderController">
-								<input type="hidden" name="customerId" value="${customerId}">
+							<form method="post" action="OrderController">
+								<input type="hidden" name="jsp" value="CUSTWelcome">
+								<%
+									if(customer != null) {
+										out.println("<input type=\"hidden\" name=\"customerId\" value=\""+customer.getCustomerId()+"\"/>");		
+									}
+								%>
+								<input type="hidden" name="itemId" value="${shoe.itemId}">
 								<div class="item_desc">
 									<img src="image/${shoe.itemName}.png"></img>
 									<p>${shoe.itemName}</p>
@@ -146,8 +162,14 @@
 				<ul class="items">
 					<c:forEach items="${kidShoes}" var="shoe">
 						<li class="item">
-							<form action="OrderController">
-								<input type="hidden" name="customerId" value="${customerId}">
+							<form method="post" action="OrderController">
+								<input type="hidden" name="jsp" value="CUSTWelcome">
+								<%
+									if(customer != null) {
+										out.println("<input type=\"hidden\" name=\"customerId\" value=\""+customer.getCustomerId()+"\"/>");		
+									}
+								%>
+								<input type="hidden" name="itemId" value="${shoe.itemId}">
 								<div class="item_desc">
 									<img src="image/${shoe.itemName}.png"></img>
 									<p>${shoe.itemName}</p>

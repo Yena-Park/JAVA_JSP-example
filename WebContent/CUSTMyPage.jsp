@@ -64,7 +64,7 @@
 						        <td>
 						        	<input type="hidden" name="jsp" value="CUSTMyPage"/>
 									<input type="submit" name="submit" value="Edit Order"/>
-									<input type="submit" name="submit" value="Cancel Order"/>
+									<input type="submit" name="submit" value="Cancel & Delete Order"/>
 								</td>
 						    </c:when>    
 						    <c:otherwise>

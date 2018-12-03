@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import assign3.model.Order;
@@ -13,7 +14,25 @@ public class OrderDAO {
 	static Connection con;
 	static PreparedStatement pst;
 	
-	//add customer row
+	public static int addOrder(int customerId, int itemId, int quantity) {
+		String query = "INSERT INTO orders (customerId, itemId, orderDate, quantity, status) "
+				+ "VALUES (?, ?, Date(now()), ?, 'ordered')";
+		int result = -1;
+		try {
+			con = DBConnector.getConnection();
+			pst = con.prepareStatement(query);
+			pst.setInt(1, customerId);
+			pst.setInt(2, itemId);
+			pst.setInt(3, quantity);
+			result = pst.executeUpdate();
+			pst.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 	public static List<Order> getOrdersByCustomerId(int customerId) {
 		String query = "select * from orders where customerId = ?";
 		
