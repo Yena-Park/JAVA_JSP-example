@@ -10,6 +10,7 @@
 		}
 		#login_main {
 			width: 960px;
+			height: 50vh;
 			margin: 0 auto;
 			text-align:center;
 		}
@@ -47,6 +48,11 @@
 			background-color: #1c3f61;
 			color: white;
 		}
+		.footer {
+			overflow: hidden;
+			background-color: #ddbe9f;
+			height: 50px;
+		}
 	</style>
 <title>Insert title here</title>
 </head>
@@ -67,6 +73,9 @@
 			<button class="button" type="submit">Login</button>
 		</form>
 		<p>New User? <a href="RegisterForm.jsp">Click Here!</a></p><!--Hyperlink 걸어야함 -->
+	</div>
+	
+	<div class="footer">
 	</div>
 </body>
 </html>

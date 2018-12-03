@@ -88,7 +88,7 @@
 				</tr>
 				<c:forEach items="${customers}" var="customer">
 					<tr>
-						<td><input type="radio" name="customerId" value="${customer.customerId}"/></td>
+						<td><input type="radio" checked="checked" name="customerId" value="${customer.customerId}"/></td>
 						<td>${customer.customerId}</td>
 						<td>${customer.userName}</td>
 						<td>${customer.firstName}</td>
@@ -96,6 +96,8 @@
 					</tr>
 				</c:forEach>
 			</table>
+			
+			<br>
 		
 			<input type="submit" name="button" value="View" class="button"/>
 			<input type="submit" name="button" value="Edit" class="button"/>

@@ -76,7 +76,7 @@
 				</tr>
 				<c:forEach items="${shoes}" var="shoe">
 					<tr>
-						<td><input type="radio" name="itemId" value="${shoe.itemId}"/></td>
+						<td><input type="radio" checked="checked" name="itemId" value="${shoe.itemId}"/></td>
 						<td>${shoe.itemId}</td>
 						<td>${shoe.itemName}</td>
 						<td>${shoe.category}</td>
@@ -85,6 +85,8 @@
 					</tr>
 				</c:forEach>
 			</table>
+			
+			<br>
 		
 			<input type="submit" name="button" value="View" class="button"/>
 			<input type="submit" name="button" value="Add" class="button"/>

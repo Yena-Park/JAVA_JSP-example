@@ -44,7 +44,7 @@
 			<table>
 				<tr><td>Item Name:</td><td>
 				<input type="text" name="itemName" value="<%=shoe.getItemName()%>"/></td></tr>
-				<tr><td>Category:</td><td>  
+				<tr><td>Category:</td><td>
 				<input type="text" name="category" value="<%=shoe.getCategory()%>"/></td></tr>  
 				<tr><td>Item Size:</td><td>  
 				<input type="text" name="shoeSize" value="<%=shoe.getShoeSize()%>"/></td></tr>  

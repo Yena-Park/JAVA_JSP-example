@@ -39,7 +39,12 @@
 	<jsp:include page="/common.jsp" />
 	<br>
 	<div id="main">
+		<h2>CSR Menus</h2>
+		<br>
+		<br>
 		<p><button class="button"><a href="ManageProductController">Manage Product</a></button></p>
+		<br>
+		<br>
 		<p><button class="button"><a href="ManageCustomerController">Manage Customer / Orders</a></button></p>
 	</div>
 </body>

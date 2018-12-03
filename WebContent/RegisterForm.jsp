@@ -56,7 +56,7 @@
 
 	</div><br>
 	<div class="head">Registration Form</div><br><br>
-	<form name="" method="post" action="RegisterServlet">
+	<form name="" method="post" action="RegisterController">
 		<input type="radio" checked="checked" id="customer" name="userType" value="Customer"/>
 		<label><span>Customer</span></label>
 		<input type="radio" id="CSR" name="userType" value="CSR"/>

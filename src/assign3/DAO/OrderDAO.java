@@ -44,7 +44,7 @@ public class OrderDAO {
 	}
 	
 	public static Order getOrderById(int orderId) {
-		String query = "Select * from order where orderId = ?";
+		String query = "Select * from orders where orderId = ?";
 		Order order = null;
 		try {
 			con = DBConnector.getConnection();
@@ -70,4 +70,41 @@ public class OrderDAO {
 		return order;
 	}
 	
+	
+	public static int UpdateOrderStatusById(int orderId, String status) {
+		String query = "UPDATE orders set status=? where orderId = ?";
+		
+		try {
+			con = DBConnector.getConnection();
+			pst = con.prepareStatement(query);
+			
+			pst.setString(1, status);
+			pst.setInt(2, orderId);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return orderId;
+	}
+	
+	public static int deleteById(int orderId) {
+		String query = "DELETE FROM orders where orderId = ?";
+		
+		try {
+			con = DBConnector.getConnection();
+			pst = con.prepareStatement(query);
+			
+			pst.setInt(1, orderId);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();
+		} catch (Exception ex) {
+			System.out.println("delete failed: An Exception has occurred! " + ex);
+		} 
+		return orderId;
+	}
 }

@@ -20,7 +20,8 @@
 			margin-left: 10%;
 		}
 		#main #table_person {
-			width: 80%;
+			width: 40%;
+			margin-left: 25%;
 		}
 		
 		p.head{
@@ -43,16 +44,16 @@
 <body>
 	<jsp:include page="/common.jsp" />
 	<div id="main">
-		<p class="head"> Customer's Information</p>
+		<p class="head">Manage Order</p>
 		<%  
 			Customer customer = (Customer) request.getAttribute("customer");  
 		%>  
 		<div>
-			<h2>Personal Information</h2>  
+			<h2>Customer Information</h2>  
 			<input type="hidden" name="customerId" value="<%=customer.getCustomerId() %>"/>  
 			<table id="table_person">  
-				<tr><td>Last Name:</td><td>  
-				<div><%=customer.getLastName()%></div>
+				<tr><td>User Name:</td><td>  
+				<div><%=customer.getUserName()%></div>
 				<tr><td>First Name:</td><td>  
 				<div><%=customer.getFirstName()%></div>
 				<tr><td>Last Name:</td><td>  
@@ -67,28 +68,33 @@
 		</div>
 		  
 		<div>
-			<h2>Order Information</h2>
+			<h2><%=customer.getUserName()%>'s Order Information</h2>
 			<table id="table_order">
 				<tr>
-					<th></th>
 					<th>Order Id</th>
+					<th>Customer Id</th>
 					<th>Item Id</th>
 					<th>Quantity</th>
 					<th>Order Date</th>
 					<th>Status</th>
 					<th></th>
-					<th></th>
 				</tr>
 				<c:forEach items="${orders}" var="order">
 					<tr>
-						<td><input type="radio" name="itemId" value="${shoe.itemId}"/></td>
 						<td>${order.orderId}</td>
+						<td>${order.customerId}</td>
 						<td>${order.itemId}</td>
 						<td>${order.quantity}</td>
 						<td>${order.orderDate}</td>
 						<td>${order.status}</td>
-						<td><button class="button">Edit</button></td>
-						<td><button class="button">Cancel</button></td>
+						<td>
+							<form action="ManageOrderController" method="post">
+								<input type="hidden" name="orderId" value="${order.orderId}"/>
+								<input type="hidden" name="customerId" value="${order.customerId}"/>
+								<input type="hidden" name="itemId" value="${order.itemId}"/>
+								<input type="submit" name="button" value="Edit"/>
+							</form>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>

@@ -63,7 +63,7 @@
 	}
 	.item {
 		width: 300px;
-		height: 300px;
+		height: auto;
 		float: left;
 	}
 	
