@@ -71,6 +71,7 @@
 		width: 300px;
 		height: 400px;
 		float: left;
+		text-align: center;
 	}
 	
 	.item img {
@@ -85,8 +86,8 @@
 	
 	.item_desc {
 		position: relative;
+		text-align: center;
 	}
-	
 	
 	</style>
 <title>Insert title here</title>
@@ -116,8 +117,8 @@
 									<p>${shoe.itemName}</p>
 									<p>size: ${shoe.shoeSize}</p>
 									<p>price: $ ${shoe.price}</p>
+									<input type="submit" value="Order">
 								</div>
-								<input type="submit" value="Order">
 							</form>
 						</li>
 					</c:forEach>
@@ -134,8 +135,8 @@
 									<p>${shoe.itemName}</p>
 									<p>size: ${shoe.shoeSize}</p>
 									<p>price: $ ${shoe.price}</p>
+									<input type="submit" value="Order">
 								</div>
-								<input type="submit" value="Order">
 							</form>
 						</li>
 					</c:forEach>
@@ -152,8 +153,8 @@
 									<p>${shoe.itemName}</p>
 									<p>size: ${shoe.shoeSize}</p>
 									<p>price: $ ${shoe.price}</p>
+									<input type="submit" value="Order">
 								</div>
-								<input type="submit" value="Order">
 							</form>
 						</li>
 					</c:forEach>
