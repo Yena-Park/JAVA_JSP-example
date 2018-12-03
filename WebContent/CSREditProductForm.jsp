@@ -19,6 +19,10 @@
 		margin-right: 20%;
 	}
 	
+	#main img {
+		width: 300px;
+		height: 300px;
+	}
 </style>
 </head>  
 <body>  
@@ -40,7 +44,8 @@
 		}
 	%>
 		<form action="EditShoeController" method="post">  
-			<input type="hidden" name="itemId" value="<%=shoe.getItemId() %>"/>  
+			<input type="hidden" name="itemId" value="<%=shoe.getItemId() %>"/>
+			<img src="image/${shoe.itemName}.jpg"></img>  
 			<table>
 				<tr><td>Item Name:</td><td>
 				<input type="text" name="itemName" value="<%=shoe.getItemName()%>"/></td></tr>

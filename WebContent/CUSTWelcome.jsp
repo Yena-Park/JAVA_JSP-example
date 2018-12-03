@@ -18,15 +18,15 @@
 	}
 
 	/* First tab */
-	#main input:nth-of-type(1) { display: none; }
+	#main input:nth-of-type(1)#men { display: none; }
 	#main input:nth-of-type(1) ~ div#men  { display: none; }
 	#main input:nth-of-type(1):checked ~ div#men  { display: block; }
 	
-	#main input:nth-of-type(2) { display: none; }
+	#main input:nth-of-type(2)#women { display: none; }
 	#main input:nth-of-type(2) ~ div#women  { display: none; }
 	#main input:nth-of-type(2):checked ~ div#women  { display: block; }
 	
-	#main input:nth-of-type(3) { display: none; }
+	#main input:nth-of-type(3)#kid { display: none; }
 	#main input:nth-of-type(3) ~ div#kid  { display: none; }
 	#main input:nth-of-type(3):checked ~ div#kid { display: block; }
 	
@@ -61,9 +61,15 @@
 		position: relative;
 		display: block;
 	}
+	
+	.items li {
+	 	list-style-type: none;
+	 	text-align: left;
+	}
+	
 	.item {
 		width: 300px;
-		height: auto;
+		height: 400px;
 		float: left;
 	}
 	
@@ -76,6 +82,11 @@
 		width: 100px;
 		height: 30px;
 	}
+	
+	.item_desc {
+		position: relative;
+	}
+	
 	
 	</style>
 <title>Insert title here</title>
@@ -98,52 +109,55 @@
 				<ul class="items">
 					<c:forEach items="${menShoes}" var="shoe">
 						<li class="item">
-							<img src="image/men/default.png" />
-							<div>
-								<p>${shoe.itemName}</p>
-								<p>${shoe.shoeSize}</p>
-								<p>${shoe.category}</p>
-								<p>${shoe.price}</p>
-							</div>
+							<form action="OrderController">
+								<input type="hidden" name="customerId" value="${customerId}">
+								<div class="item_desc">
+									<img src="image/${shoe.itemName}.jpg"></img>
+									<p>${shoe.itemName}</p>
+									<p>size: ${shoe.shoeSize}</p>
+									<p>price: $ ${shoe.price}</p>
+								</div>
+								<input type="submit" value="Order">
+							</form>
 						</li>
 					</c:forEach>
 				</ul>
-				
-				<button>Order</button>
 			</div>
 			<div class="tab_item" id="women">
 				<ul class="items">
 					<c:forEach items="${womenShoes}" var="shoe">
-						<li>
-							<div class="item">
-								<img src="image/women/default.png" />
-								<p>${shoe.itemName}</p>
-								<p>${shoe.shoeSize}</p>
-								<p>${shoe.category}</p>
-								<p>${shoe.price}</p>
-							</div>
+						<li class="item">
+							<form action="OrderController">
+								<input type="hidden" name="customerId" value="${customerId}">
+								<div class="item_desc">
+									<img src="image/${shoe.itemName}.jpg"></img>
+									<p>${shoe.itemName}</p>
+									<p>size: ${shoe.shoeSize}</p>
+									<p>price: $ ${shoe.price}</p>
+								</div>
+								<input type="submit" value="Order">
+							</form>
 						</li>
 					</c:forEach>
 				</ul>
-				
-				<button>Order</button>
 			</div>
 			<div class="tab_item" id="kid">
 				<ul class="items">
 					<c:forEach items="${kidShoes}" var="shoe">
-						<li>
-							<div class="item">
-								<img src="image/kid/default.png" />
-								<p>${shoe.itemName}</p>
-								<p>${shoe.shoeSize}</p>
-								<p>${shoe.category}</p>
-								<p>${shoe.price}</p>
-							</div>
+						<li class="item">
+							<form action="OrderController">
+								<input type="hidden" name="customerId" value="${customerId}">
+								<div class="item_desc">
+									<img src="image/${shoe.itemName}.jpg"></img>
+									<p>${shoe.itemName}</p>
+									<p>size: ${shoe.shoeSize}</p>
+									<p>price: $ ${shoe.price}</p>
+								</div>
+								<input type="submit" value="Order">
+							</form>
 						</li>
 					</c:forEach>
 				</ul>
-				
-				<button>Order</button>
 			</div>
 		</div>
 	</div>

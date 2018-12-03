@@ -34,7 +34,10 @@
 		margin-left: 20%;
 		margin-right: 20%;
 	}
-	
+	#main img {
+		width: 300px;
+		height: 300px;
+	}
 </style>
 <title>View Customer</title>  
 </head>  
@@ -45,7 +48,8 @@
 	%>  
 	<div id="main">
 		<h1>View Product</h1>  
-		<input type="hidden" name="itemId" value="<%=shoe.getItemId() %>"/>  
+		<input type="hidden" name="itemId" value="<%=shoe.getItemId() %>"/>
+		<img src="image/${shoe.itemName}.jpg"></img>  
 		<table>  
 			<tr><td>Item Name:</td><td>  
 			<div><%=shoe.getItemName()%></div>
