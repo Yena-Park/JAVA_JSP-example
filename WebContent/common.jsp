@@ -27,6 +27,13 @@
 		top: 0px;
 	}
 	
+	#main_header .common #form {
+		display: inline-block;
+	}
+	
+	.common a {
+		text-decoration: none; 
+	}
 	.common-button {
 		background-color: #1c3f61;
 		color: #ddbe9f;
@@ -64,11 +71,19 @@
 	if(customer != null) {
 %>
 	<div id="main_header">
+		
 		<div class="common">WELCOME, <%= customer.getFirstName()%> <%=customer.getLastName()%>&nbsp;
+			
+			<form id="form" action="MyPageController">	
+				<input type="hidden" name="customerId" value="<%=customer.getCustomerId()%>" />		
+				<input type="submit" name="button" value="My Orders" />
+			</form>
+			
 			<a href="Logout.jsp">
 				<button>Log out</button>
 			</a>
 		</div>
+		
 		<div class="topnav">
 			<a id="logo" href="WelcomeController">Shoe Shopping Mall</a>
 		</div>
@@ -90,5 +105,17 @@
 	</div>
 <%
 	} else {
+%>
+	<div id="main_header">
+		<div class="common"> Please, log in
+			<a href="Login.jsp">
+				<button>Log in</button>
+			</a>
+		</div>
+		<div class="topnav">
+			<a id="logo" href="CSRMenu.jsp">Shoe Shopping Mall ( CSR Page )</a>
+		</div>
+	</div>
+<%
 	}
 %>
