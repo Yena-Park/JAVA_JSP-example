@@ -1,4 +1,4 @@
-# JAVA_JSP-example
+# JAVA_JSP-examples
 
 Shoe for Women
 ---------------
